@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Achievement Portal Login</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vobile Achievement System</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- Login screen -->
-  <div id="login-screen" class="bg-screen">
-    <div class="bubble">
-      <!-- Bubble content will go here -->
+
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-bubble">
+      <!-- Google icon -->
+      <img
+        class="google-icon"
+        src="images/google-icon.png"
+        alt="Sign in with Google"
+        width="48"
+        height="48"
+      />
+
+      <!-- login form -->
+      <form class="login-form" action="#" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Username"
+          class="login-input"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="login-input"
+          required
+        />
+        <button type="submit" class="login-button">Sign In</button>
+      </form>
+
+      <!-- Vobile logo -->
+      <img
+        class="vobile-logo"
+        src="images/vobile-logo.png"
+        alt="Vobile Logo"
+        width="120"
+        height="auto"
+      />
     </div>
   </div>
-
-  <!-- Post-login screen (hidden until after login) -->
-  <div id="main-screen" class="bg-screen hidden">
-    <!-- Future dashboard content -->
-  </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
