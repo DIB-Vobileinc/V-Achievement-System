@@ -3,20 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vobile Achievement Login</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Vobile Achievement Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <div class="login-container">
-    <!-- your pre-bubbled artwork -->
-    <img src="images/office-clean.png" alt="Login bubble" class="bubble-artwork"/>
+    <!-- 
+      This div configures the libraries; 
+      replace data-login_uri with your actual deployed handle_token.html URL 
+    -->
+    <div
+      id="g_id_onload"
+      data-client_id="991409612146-u5ck34qq1kq6sekdcqnk2r32ssk8l1pf.apps.googleusercontent.com"
+      data-login_uri="https://dib-vobileinc.github.io/V-Achievement-System/handle_token.html"
+      data-auto_prompt="false">
+    </div>
 
-    <!-- form floats on top -->
-    <form class="login-form" action="#" method="post">
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Sign In</button>
-    </form>
+    <!-- This is the actual Google Sign-In button -->
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="filled_blue"
+      data-text="continue_with"
+      data-shape="rectangular"
+      data-logo_alignment="left">
+    </div>
   </div>
 </body>
 </html>
