@@ -1,4 +1,4 @@
-/* reset & ensure full-screen */
+/* 1) RESET & FULL-SCREEN SETUP */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,39 +8,46 @@ html, body {
   height: 100%;
 }
 body {
-  /* dramatic background */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: url('images/office.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  position: relative;
+  overflow: hidden;
 }
 
-/* center container */
+/* 2) CONTAINER IS CENTERED & RESPONSIVE */
 .login-container {
   position: absolute;
   top: 50%;
   left: 50%;
+  /* center it */
   transform: translate(-50%, -50%);
-  width: 400px;       /* match your bubble artwork width */
-  max-width: 90%;
+  /* scale to viewport */
+  width: 60vmin;
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
-/* bubble image */
+/* 3) BUBBLE ARTWORK AUTO-SCALES */
 .bubble-artwork {
-  width: 100%;
   display: block;
+  width: 100%;
+  height: auto;
+  /* keep it from overflowing */
+  max-height: 100%;
+  object-fit: contain;
 }
 
-/* form sits on top of bubble */
+/* 4) FORM LAYS ON TOP, ALSO SCALING */
 .login-form {
   position: absolute;
+  /* tweak to vertically center within the bubble */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -48%);
   width: 80%;
 }
 
-/* inputs & button styling */
+/* 5) INPUTS & BUTTON, 63% OPACITY */
 .login-form input,
 .login-form button {
   display: block;
@@ -69,7 +76,17 @@ body {
   transition: opacity 0.2s ease;
 }
 
-/* stronger opacity on hover */
+/* hover state */
 .login-form button:hover {
   opacity: 0.8;
+}
+
+/* 6) VERY SMALL SCREENS: shrink more */
+@media (max-width: 400px) {
+  .login-container {
+    width: 90vw;
+  }
+  .login-form {
+    width: 90%;
+  }
 }
