@@ -1,0 +1,35 @@
+/* Make both screens fill the viewport */
+.bg-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Login uses the bubble-background image */
+#login-screen {
+  background-image: url('images/office-clean.png');
+}
+
+/* Main dashboard uses the clean office image */
+#main-screen {
+  background-image: url('images/office.png');
+}
+.hidden {
+  display: none;
+}
+
+/* Bubble container in the center */
+.bubble {
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
