@@ -1,32 +1,33 @@
-/* reset box-model and remove default margins */
+/* reset and full-height */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
+/* full-screen cover of your clean office+bubble image */
 body {
-  /* full-screen background: your clean office image with bubble baked in */
   background: url('./office-clean.png') no-repeat center center;
   background-size: cover;
   font-family: Arial, sans-serif;
 }
 
-/* center the sign-in button overlay */
+/* make the container fill the viewport and center its contents */
 .login-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 280px; /* adjust if you need more/less width */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;    /* vertical centering */
+  justify-content: center;/* horizontal centering */
 }
 
-/* make the Google button slightly translucent */
+/* slightly translucent button */
 .login-container .g_id_signin {
   opacity: 0.63;
 }
