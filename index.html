@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
   <title>Vobile Achievement Manager</title>
-  <!-- make sure this path matches exactly where your styles.css lives -->
   <link rel="stylesheet" href="styles.css" />
+
   <!-- Google Identity Services -->
   <script
     src="https://accounts.google.com/gsi/client"
@@ -18,23 +18,45 @@
 </head>
 
 <body>
-  <div class="login-container">
+  <div class="login-screen">
+    <!-- This invisible div just configures the library -->
     <div
       id="g_id_onload"
       data-client_id="991409612146-u5ck34qq1kq6sekdcqnk2r32ssk8l1pf.apps.googleusercontent.com"
-      data-login_uri="https://dib-vobileinc.github.io/V-Achievement-System/handle_token.html"
+      data-callback="handleCredentialResponse"
       data-auto_prompt="false"
     ></div>
 
-    <div
-      class="g_id_signin"
-      data-type="standard"
-      data-size="large"
-      data-theme="filled_blue"
-      data-text="continue_with"
-      data-shape="rectangular"
-      data-logo_alignment="left"
-    ></div>
+    <!-- This is the “Continue with Google” button, rendered into the bubble -->
+    <div class="login-bubble">
+      <div
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="filled_blue"
+        data-text="continue_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+      ></div>
+    </div>
   </div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      // ID token from Google
+      const jwt = response.credential;
+      // decode the payload
+      const payload = JSON.parse(
+        atob(jwt.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))
+      );
+      // user’s email
+      const email = payload.email;
+      console.log("Signed in as:", email);
+
+      // TODO: check against your managers list, then load your UI
+      // e.g. if manager → window.location = 'manager.html';
+      // else → alert("Not authorized");
+    }
+  </script>
 </body>
 </html>
