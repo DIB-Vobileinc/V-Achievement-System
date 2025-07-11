@@ -1,35 +1,79 @@
-/* Make both screens fill the viewport */
-.bg-screen {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-size: cover;
-  background-position: center;
+/* 1) full-viewport background */
+body.login-page {
+  margin: 0;
+  padding: 0;
+  background: url("images/office.png") no-repeat center/cover;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Login uses the bubble-background image */
-#login-screen {
-  background-image: url('images/office-clean.png');
+/* 2) container to center the bubble */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-/* Main dashboard uses the clean office image */
-#main-screen {
-  background-image: url('images/office.png');
-}
-.hidden {
-  display: none;
-}
-
-/* Bubble container in the center */
-.bubble {
-  width: 400px;
-  height: 400px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
-  margin: auto;
+/* 3) translucent “bubble” */
+.login-bubble {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 360px;
+  padding: 40px 24px 32px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* 4) Google icon */
+.google-icon {
+  margin-bottom: 24px;
+}
+
+/* 5) form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 6) inputs */
+.login-input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* 7) submit button */
+.login-button {
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #00aaff, #0055ff);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.login-button:hover {
+  transform: scale(1.05);
+}
+
+/* 8) Vobile logo at bottom */
+.vobile-logo {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.85;
 }
