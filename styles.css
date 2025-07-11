@@ -1,92 +1,32 @@
-/* 1) RESET & FULL-SCREEN SETUP */
+/* reset box-model and remove default margins */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html, body {
   height: 100%;
 }
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: url('images/office.png') no-repeat center center fixed;
+  /* full-screen background: your clean office image with bubble baked in */
+  background: url('./office-clean.png') no-repeat center center;
   background-size: cover;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
-/* 2) CONTAINER IS CENTERED & RESPONSIVE */
+/* center the sign-in button overlay */
 .login-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* center it */
   transform: translate(-50%, -50%);
-  /* scale to viewport */
-  width: 60vmin;
-  max-width: 80vw;
-  max-height: 80vh;
+  text-align: center;
+  width: 280px; /* adjust if you need more/less width */
 }
 
-/* 3) BUBBLE ARTWORK AUTO-SCALES */
-.bubble-artwork {
-  display: block;
-  width: 100%;
-  height: auto;
-  /* keep it from overflowing */
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* 4) FORM LAYS ON TOP, ALSO SCALING */
-.login-form {
-  position: absolute;
-  /* tweak to vertically center within the bubble */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -48%);
-  width: 80%;
-}
-
-/* 5) INPUTS & BUTTON, 63% OPACITY */
-.login-form input,
-.login-form button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 12px 16px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
+/* make the Google button slightly translucent */
+.login-container .g_id_signin {
   opacity: 0.63;
-  outline: none;
-  box-sizing: border-box;
-}
-
-/* white text fields */
-.login-form input {
-  background: #fff;
-  color: #333;
-}
-
-/* blue sign-in button */
-.login-form button {
-  background: linear-gradient(90deg, #1a73e8 0%, #4285f4 100%);
-  color: #fff;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-/* hover state */
-.login-form button:hover {
-  opacity: 0.8;
-}
-
-/* 6) VERY SMALL SCREENS: shrink more */
-@media (max-width: 400px) {
-  .login-container {
-    width: 90vw;
-  }
-  .login-form {
-    width: 90%;
-  }
 }
