@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
   <title>Vobile Achievement Manager</title>
+  <!-- make sure this path matches exactly where your styles.css lives -->
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Google Identity Services -->
+  <script
+    src="https://accounts.google.com/gsi/client"
+    async
+    defer
+  ></script>
 </head>
+
 <body>
   <div class="login-container">
-    <!-- GIS initialization -->
     <div
       id="g_id_onload"
       data-client_id="991409612146-u5ck34qq1kq6sekdcqnk2r32ssk8l1pf.apps.googleusercontent.com"
       data-login_uri="https://dib-vobileinc.github.io/V-Achievement-System/handle_token.html"
-      data-auto_prompt="false">
-    </div>
+      data-auto_prompt="false"
+    ></div>
 
-    <!-- Google Sign-In button -->
     <div
       class="g_id_signin"
       data-type="standard"
@@ -25,8 +33,8 @@
       data-theme="filled_blue"
       data-text="continue_with"
       data-shape="rectangular"
-      data-logo_alignment="left">
-    </div>
+      data-logo_alignment="left"
+    ></div>
   </div>
 </body>
 </html>
