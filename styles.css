@@ -1,33 +1,37 @@
-/* reset and full-height */
+/* reset margins and make full-screen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-/* full-screen cover of your clean office+bubble image */
+/* <-- use your baked-in bubble image here -->
+   Make sure you have an images/office-clean.png relative to index.html */
 body {
-  background: url('./office-clean.png') no-repeat center center;
+  background: url("images/office-clean.png") no-repeat center center;
   background-size: cover;
   font-family: Arial, sans-serif;
 }
 
-/* make the container fill the viewport and center its contents */
+/* full-viewport flex centering for the button */
 .login-container {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;    /* vertical centering */
-  justify-content: center;/* horizontal centering */
+  align-items: center;
+  justify-content: center;
 }
 
-/* slightly translucent button */
+/* translucent Google button */
 .login-container .g_id_signin {
   opacity: 0.63;
 }
